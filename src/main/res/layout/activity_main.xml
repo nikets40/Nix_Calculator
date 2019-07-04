@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:maxLines="1"
+            android:text="0"
+            android:background="@null"
+            android:textAlignment="textEnd"
+            android:textColor="@color/text_color"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="10dp"
+            android:focusedByDefault="true"
+            android:textSize="50sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/backspace"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/all_equation"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorAccent"
+            android:layout_marginEnd="18dp"
+
+
+            android:textSize="20sp"
+            />
+
+
+        <ImageButton
+            android:id="@+id/backspace"
+            android:onClick="bks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/numpad"
+            android:layout_alignParentEnd="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_backspace_black_24dp"
+            android:layout_marginEnd="18dp"
+
+            tools:ignore="ContentDescription" />
+
+        <RelativeLayout
+            android:id="@+id/numpad"
+            android:layout_width="match_parent"
+            android:layout_height="496dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/equal"
+                android:layout_centerHorizontal="true"
+                android:stretchColumns="*">
+
+                <TableRow android:layout_marginBottom="16px">
+
+                    <Button
+                        android:id="@+id/bc"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_special"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:text="C"
+                        android:tag="C"
+                        android:onClick="calc"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="HardcodedText,PxUsage,UnusedAttribute" />
+
+                    <Button
+                        android:onClick="calc"
+                        android:id="@+id/bracket"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_special"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:text="( )"
+                        android:tag="()"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:onClick="calc"
+                        android:id="@+id/percent"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_special"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:text="%"
+                        android:tag="%"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:onClick="calc"
+                        android:id="@+id/root"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:background="@color/button_bg_light"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:text="√"
+                        android:tag="√"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="16px">
+
+                    <Button
+                        android:id="@+id/b7"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="7"
+                        android:tag="7"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/b8"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="8"
+                        android:tag="8"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/b9"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="9"
+                        android:tag="9"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/divide"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:background="@color/button_bg_light"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="÷"
+                        android:tag="÷"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+
+                        tools:ignore="PxUsage" />
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="16px">
+
+                    <Button
+                        android:id="@+id/b4"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="4"
+                        android:tag="4"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/b5"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="5"
+                        android:tag="5"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/b6"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="6"
+                        android:tag="6"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/multiply"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:background="@color/button_bg_light"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="×"
+                        android:tag="×"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="16px">
+
+                    <Button
+                        android:id="@+id/b1"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="1"
+                        android:tag="1"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/b2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="2"
+                        android:tag="2"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/b3"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="3"
+                        android:tag="3"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:background="@color/button_bg_light"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="-"
+                        android:tag="-"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginBottom="16px"
+                    tools:ignore="PxUsage">
+
+                    <Button
+                        android:id="@+id/plus_minus"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="+/_"
+                        android:tag="+/_"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/b0"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="0"
+                        android:tag="0"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/point"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:layout_marginEnd="15px"
+                        android:background="@color/button_bg"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="."
+                        android:tag="."
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        android:textStyle="bold"
+                        tools:ignore="PxUsage" />
+
+                    <Button
+                        android:id="@+id/plus"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:background="@color/button_bg_light"
+                        android:foreground="?selectableItemBackgroundBorderless"
+                        android:onClick="calc"
+                        android:text="+"
+                        android:tag="+"
+                        android:textColor="@color/text_color"
+                        android:textSize="100px"
+                        tools:ignore="PxUsage" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/equal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/gradient_red_orange"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:text="="
+                android:textColor="@color/text_color"
+                android:textSize="35dp" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
+
+
